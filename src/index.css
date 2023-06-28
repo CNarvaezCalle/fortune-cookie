@@ -14,6 +14,7 @@
   box-sizing: border-box;
   font-family: 'Caprasimo', cursive;
   font-size: 16px;
+  
 }
 
 html,
@@ -22,8 +23,6 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(./assets/fortuna-2/fondo4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-position: center; */
-  /* background-attachment: fixed; */
   overflow: hidden;
 }
 
@@ -35,12 +34,10 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--color-secondary);
-  /* gap: 1rem; */
 }
 
 .title {
-  position: absolute; /*cambiar con set timeout para que en  1 segundo se le quite el absolute y quede en flex?*/
-  /* margin-bottom: 1rem; */
+  position: absolute; 
   animation: MoveUpDown 1s forwards;
   font-size: 1.6rem;
 }
@@ -54,22 +51,10 @@ body {
   }
 }
 
-/* .container-cookie {
-  height: 2.4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  
-} */
-
 .img-container {
   display: flex;
   align-items: center;
   justify-content: center;
-/*   
-  top: 50%;
-  left: 10%;
-  width: 50px;
-  height: 50px; */
 }
 
 .button {
@@ -80,12 +65,8 @@ body {
   border-radius: 2rem;
   box-shadow: 0.4rem 1rem rgba(0, 0, 0,  0.2);
   cursor: pointer;
-  /* animation: bright 0.6s linear; */
   text-align: center;
   font-size: 0.8rem;
-  /* display, jutcont, alignit */
-  /* margin-top: 4rem; */
-  /* margin-bottom: 4rem; */
 }
 
 .button:hover {
@@ -93,20 +74,7 @@ body {
   transform: scale(0.97);
 }
 
-
-
-/* .img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Para ajustar la imagen dentro del contenedor sin deformarla */
-  /*position: absolute;
-}*/
- 
-
 .cookie-cool-one {
-  /* position: absolute;
-  top: 0;
-  left: 0; */
   height: 20px;
   width: 20px;
   margin: 0 1rem;
@@ -114,17 +82,10 @@ body {
 
 
 .title.animate {
-  /* Estilos de la animación para el título */
   animation: MoveUpDown 2s linear;
 }
 
 .cookie-cool-one.animate {
-  /* Estilos de la animación para la primera imagen de la galleta */
-  animation: MoveCookie 0.5s linear infinite;
-}
-
-.cookie-cool-two.animate {
-  /* Estilos de la animación para la segunda imagen de la galleta */
   animation: MoveCookie 0.5s linear infinite;
 }
 
@@ -149,19 +110,31 @@ body {
   }
 }
 
+@keyframes BottomCookie {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 
 .phrase-container {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='288' height='120' preserveAspectRatio='none' viewBox='0 0 288 120'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1014%26quot%3b)' fill='none'%3e%3crect width='288' height='120' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1015%26quot%3b)'%3e%3c/rect%3e%3cpath d='M302.4 120L0 120 L0 86.58Q8.96 81.14%2c 14.399999999999999 90.1Q18.3 70%2c 38.4 73.91Q46.69 58.2%2c 62.4 66.49Q90.19 70.28%2c 86.4 98.06Q83.29 80.55%2c 100.80000000000001 77.44Q102.84 65.08%2c 115.20000000000002 67.12Q135.31 72.83%2c 129.60000000000002 92.93Q129.3 78.23%2c 144.00000000000003 77.93Q150.64 60.56%2c 168.00000000000003 67.2Q190.61 65.81%2c 192.00000000000003 88.42Q209.18 81.6%2c 216.00000000000003 98.78Q208.63 77.01%2c 230.40000000000003 69.64Q235.44 60.28%2c 244.80000000000004 65.31Q258.5 64.6%2c 259.20000000000005 78.3Q276.84 81.54%2c 273.6 99.17Q270.09 81.26%2c 288 77.75Q307.91 83.27%2c 302.4 103.18z' fill='rgba(58%2c 99%2c 150%2c 0.54)'%3e%3c/path%3e%3cpath d='M307.2 120L0 120 L0 111.85Q18.61 106.46%2c 24 125.07Q18.29 104.95%2c 38.4 99.24Q53.62 100.06%2c 52.8 115.28Q66.25 114.33%2c 67.19999999999999 127.78Q64.8 110.98%2c 81.6 108.58Q81.3 93.88%2c 96 93.58Q126.08 99.66%2c 120 129.75Q131.17 116.92%2c 144 128.09Q147.67 107.76%2c 168 111.43Q168.98 98.01%2c 182.4 98.99Q199.77 101.96%2c 196.8 119.33Q205.35 103.88%2c 220.8 112.44Q223.24 90.88%2c 244.8 93.32Q251.66 85.78%2c 259.2 92.63Q278.51 87.94%2c 283.2 107.26Q302.68 102.74%2c 307.2 122.22z' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1014'%3e%3crect width='288' height='120' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='100%25' cy='100%25' r='312' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1015'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='0.89'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3c/defs%3e%3c/svg%3e");
   width: 18rem;
-  height: 7.5rem;
+  height: 8rem;
   opacity: 0.8;
   box-shadow: 0.8rem 1.2rem rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 0 0 10px 10px; 
+  border-radius: 10px;
   margin-top: 4rem;
   
 }
@@ -169,7 +142,7 @@ body {
 .phrase-container .phrase {
   color: black;
   opacity: 1;
-  padding: 2rem;
+  padding: 3rem;
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -179,18 +152,22 @@ body {
   margin-top: 3rem;
 }
 
-/* Responsividad para moviles medianos */
-/* @media screen and (min-width: 576px) {
-  .title {
-    margin-bottom: 1rem;
-    font-size: 2.2rem;
-  }
-}  */
+.bottom-cookie {
+  position: fixed;
+  left: 1rem;
+  bottom: 10px;
+  height: 50px;
+  width: 50px;
+  /* margin: 0 1rem; */
+  animation: BottomCookie 1s infinite ease-in-out;
+}
 
-@media screen and (min-width:720px) {
+
+
+
+@media screen and (min-width:600px) {
   .title {
     margin-top: 2.5rem;
-    /* margin-bottom: rem; */
     font-size: 3.3rem;
   }
 
@@ -199,16 +176,12 @@ body {
   }
 
   .button {
-    /* margin-bottom: 3rem; */
     width: 19rem;
     height: 4.5rem;
     font-size: 1rem;
   }
 
   .cookie-cool-one {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
     height: 50px;
     width: 50px;
     margin: 0 1rem;
@@ -218,11 +191,21 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='416' height='224' preserveAspectRatio='none' viewBox='0 0 416 224'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1014%26quot%3b)' fill='none'%3e%3crect width='416' height='224' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1015%26quot%3b)'%3e%3c/rect%3e%3cpath d='M422.9333333333335 224L0 224 L0 185.67Q1.08 152.09%2c 34.66666666666667 153.17Q44.42 128.26%2c 69.33333333333334 138.01Q95.59 143.47%2c 90.13333333333334 169.73Q110.45 169.25%2c 110.93333333333334 189.57Q93.08 150.91%2c 131.73333333333335 133.06Q163.67 144.2%2c 152.53333333333336 176.14Q170.91 173.72%2c 173.33333333333337 192.1Q154.5 152.47%2c 194.13333333333338 133.64Q226.33 145.04%2c 214.9333333333334 177.24Q204.86 132.5%2c 249.60000000000008 122.43Q294.96 146.99%2c 270.4000000000001 192.35Q262.19 163.34%2c 291.2000000000001 155.13Q295.17 138.29%2c 312.0000000000001 142.26Q315.29 124.75%2c 332.8000000000001 128.03Q376.29 136.85%2c 367.4666666666668 180.34Q390.83 169.04%2c 402.1333333333335 192.4Q392.82 162.29%2c 422.9333333333335 152.98z' fill='rgba(58%2c 99%2c 150%2c 0.54)'%3e%3c/path%3e%3cpath d='M416.00000000000017 224L0 224 L0 194.64Q1.19 175.03%2c 20.8 176.21Q37.55 158.3%2c 55.46666666666667 175.05Q74.16 172.94%2c 76.26666666666667 191.64Q104.83 199.41%2c 97.06666666666666 227.97Q86.78 183.02%2c 131.73333333333335 172.73Q176.35 196.55%2c 152.53333333333336 241.17Q142.09 196.06%2c 187.20000000000005 185.61Q205.12 182.73%2c 208.00000000000006 200.65Q238.61 196.6%2c 242.66666666666674 227.21Q246.8 210.54%2c 263.46666666666675 214.68Q268.47 185.02%2c 298.13333333333344 190.02Q303.02 174.11%2c 318.93333333333345 179Q365.38 190.78%2c 353.60000000000014 237.22Q341.4 204.22%2c 374.40000000000015 192.01Q379.55 176.36%2c 395.20000000000016 181.51Q407.69 173.2%2c 416.00000000000017 185.68z' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1014'%3e%3crect width='416' height='224' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='100%25' cy='100%25' r='472.47' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1015'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='0.89'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3c/defs%3e%3c/svg%3e");
     width: 26rem;
     height: 14rem;
-    border-radius: 30px 50px 70px 140px;
+    border-radius: 20px;
   }
 
   .phrase-container .phrase {
     font-size: 1.3rem;
+  }
+
+  .bottom-cookie {
+    position: fixed;
+    left: 2rem;
+    bottom: 10px;
+    height: 80px;
+    width: 80px;
+    /* margin: 0 1rem; */
+    animation: BottomCookie 1s infinite ease-in-out;
   }
 
   .source {
@@ -230,7 +213,6 @@ body {
     font-size: 1.3rem;
   }
 }
-
 
 @media screen and (min-width:992px) {
 
@@ -258,9 +240,6 @@ body {
   }
 
   .cookie-cool-one {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
     height: 60px;
     width: 60px;
     margin: 0 1rem;
@@ -271,11 +250,21 @@ body {
     margin-top: 1rem;
     width: 30rem;
     height: 16rem;
-    border-radius: 50px 70px 90px 180px;
+    border-radius: 40px;
   }
 
   .phrase-container .phrase {
     font-size: 1.5rem;
+  }
+
+  .bottom-cookie {
+    position: fixed;
+    left: 4rem;
+    bottom: 10px;
+    height: 90px;
+    width: 90px;
+    /* margin: 0 1rem; */
+    animation: BottomCookie 1s infinite ease-in-out;
   }
 
   .source {

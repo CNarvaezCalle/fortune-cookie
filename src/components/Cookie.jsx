@@ -26,18 +26,17 @@ const Cookie = ({data}) => {
     return(
         <div className="container"> 
             <h1 className="title">FORTUNE COOKIES</h1>
-            {/* <div className="container-cookie"> */}
             <div className="img-container">
-            <img className={`cookie-cool-one ${isAnimating ? "animate" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
-            <button button className="button"  onClick={openCookie}>press to know your fortune
-            </button>
-            <img className={`cookie-cool-one ${isAnimating ? "animate" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
+                <img className={`cookie-cool-one ${isAnimating ? "animate" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
+                <button button className="button"  onClick={openCookie}>press to know your fortune
+                </button>
+                <img className={`cookie-cool-one ${isAnimating ? "animate" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
             </div>
-            {/* </div> */}
             <div className="phrase-container">
                 <p className="phrase">{message.phrase}</p>
             </div> 
-                <p className="source">{message.author}</p>
+            <p className="source">{message.author}</p>
+            <img className="bottom-cookie" src="cookie-bottom.png" alt="cookiecool" />
         </div>
 
     )
