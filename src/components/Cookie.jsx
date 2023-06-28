@@ -5,11 +5,22 @@ import { useState } from "react"
 const Cookie = ({data}) => {
 
     const [ message, setMessage] = useState('');
+    const [isAnimating, setIsAnimating] = useState(false);
 
     
     const openCookie = () => {
         setMessage(data[Math.floor(Math.random() * data.length)]);
-    }
+       
+       
+        setIsAnimating(true);
+
+        setTimeout(() => {
+            setIsAnimating(false);
+          }, 1000);
+        };
+    
+
+
 
     // style={{backgroundImage: `url(${background})`}}
     return(
@@ -17,11 +28,11 @@ const Cookie = ({data}) => {
             <h1 className="title">FORTUNE COOKIES</h1>
             {/* <div className="container-cookie"> */}
             <div className="img-container">
-            <img className="cookie-cool-one" src="/cookie-cool.png" alt="cookiecool" />
-            <img className="cookie-cool-two" src="/cookie-cool.png" alt="cookiecool" />
-            </div>
-            <button className="button"  onClick={openCookie}>press to know your fortune
+            <img className={`cookie-cool-one ${isAnimating ? "animate" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
+            <button button className="button"  onClick={openCookie}>press to know your fortune
             </button>
+            <img className={`cookie-cool-one ${isAnimating ? "animate" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
+            </div>
             {/* </div> */}
             <div className="phrase-container">
                 <p className="phrase">{message.phrase}</p>
