@@ -1,9 +1,7 @@
 :root {
   --color-bg: #e5e5e5;
-  --color-main: #000000;
-  --color-special: #fca311;
-  --color-secondary: #14213d;
-  --color-white: #ffffff;
+  --color-main: #14213d;
+
 }
 
 *,
@@ -26,22 +24,6 @@ body {
   overflow: hidden;
 }
 
-
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-secondary);
-}
-
-.title {
-  position: absolute; 
-  animation: MoveUpDown 1s forwards;
-  font-size: 1.6rem;
-}
-
 @keyframes MoveUpDown {
   0% {
     top: 0;
@@ -51,50 +33,17 @@ body {
   }
 }
 
-.img-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.button {
-  background-color: var(--color-secondary);
-  color: var(--color-bg);
-  width: 14rem;
-  height: 2.4rem;
-  border-radius: 2rem;
-  box-shadow: 0.4rem 1rem rgba(0, 0, 0,  0.2);
-  cursor: pointer;
-  text-align: center;
-  font-size: 0.8rem;
-}
-
-.button:hover {
-  opacity: 0.7;
-  transform: scale(0.97);
-}
-
-.cookie-cool-one {
-  height: 20px;
-  width: 20px;
-  margin: 0 1rem;
-}
-
-
-.title.animate {
-  animation: MoveUpDown 2s linear;
-}
-
-.cookie-cool-one.animate {
-  animation: MoveCookie 0.5s linear infinite;
-}
-
-@keyframes MoveUpDown {
+@keyframes Appear {
   0% {
-    top: 0;
+    opacity: 0;
   }
+
+  55% {
+    opacity: 0;
+  }
+
   100% {
-    top: 9rem;
+    opacity: 1;
   }
 }
 
@@ -114,13 +63,96 @@ body {
   0% {
     transform: translateY(0);
   }
-  50% {
+  20% {
     transform: translateY(-200%);
   }
+
+  40% {
+    transform: translateY(0);
+  }
+
   100% {
     transform: translateY(0);
   }
 }
+
+@keyframes closeOpen {
+  0% {
+    opacity: 0.8;
+    /* transform: scaleX(0.1); */
+  }
+
+  00% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+    /* transform: scaleX(0.5); */
+  }
+}
+
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-main);
+}
+
+.title {
+  position: absolute; 
+  animation: MoveUpDown 1s forwards;
+  font-size: 1.6rem;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  background-color: var(--color-main);
+  color: var(--color-bg);
+  width: 14rem;
+  height: 2.4rem;
+  border-radius: 2rem;
+  box-shadow: 0.4rem 1rem rgba(0, 0, 0,  0.2);
+  cursor: pointer;
+  
+}
+
+.button-text {
+  animation: Appear 2s forwards;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.button:hover {
+  opacity: 0.7;
+  transform: scale(0.97);
+}
+
+.title.animate {
+  animation: MoveUpDown 2s linear;
+}
+
+.cookie-cool-one {
+  height: 20px;
+  width: 20px;
+  margin: 0.5rem 1rem 0;
+}
+
+
+
+.cookie-cool-one.shake {
+  animation: MoveCookie 0.5s linear infinite;
+}
+
+
 
 
 
@@ -137,6 +169,10 @@ body {
   border-radius: 10px;
   margin-top: 4rem;
   
+}
+
+.phrase.close-open {
+  animation: closeOpen 0.3s ease-out;
 }
 
 .phrase-container .phrase {
@@ -159,7 +195,7 @@ body {
   height: 50px;
   width: 50px;
   /* margin: 0 1rem; */
-  animation: BottomCookie 1s infinite ease-in-out;
+  animation: BottomCookie 3s infinite ease-in-out;
 }
 
 
@@ -178,13 +214,16 @@ body {
   .button {
     width: 19rem;
     height: 4.5rem;
+  }
+
+  .button-text {
     font-size: 1rem;
   }
 
   .cookie-cool-one {
-    height: 50px;
-    width: 50px;
-    margin: 0 1rem;
+    height: 40px;
+    width: 40px;
+    margin: 0.5rem 1rem 0;
   }
 
   .phrase-container {
@@ -205,7 +244,7 @@ body {
     height: 80px;
     width: 80px;
     /* margin: 0 1rem; */
-    animation: BottomCookie 1s infinite ease-in-out;
+    /* animation: BottomCookie 1s infinite ease-in-out; */
   }
 
   .source {
@@ -236,13 +275,17 @@ body {
     
     width: 22rem;
     height: 5rem;
+    
+  }
+
+  .button-text {
     font-size: 1.3rem;
   }
 
   .cookie-cool-one {
-    height: 60px;
-    width: 60px;
-    margin: 0 1rem;
+    height: 50px;
+    width: 50px;
+    margin: 0.5rem 1.5rem 0;
   }
 
   .phrase-container {
@@ -261,10 +304,10 @@ body {
     position: fixed;
     left: 4rem;
     bottom: 10px;
-    height: 90px;
-    width: 90px;
+    height: 100px;
+    width: 100px;
     /* margin: 0 1rem; */
-    animation: BottomCookie 1s infinite ease-in-out;
+    /* animation: BottomCookie 1s infinite ease-in-out; */
   }
 
   .source {

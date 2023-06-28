@@ -5,19 +5,25 @@ import { useState } from "react"
 const Cookie = ({data}) => {
 
     const [ message, setMessage] = useState('');
-    const [isAnimating, setIsAnimating] = useState(false);
+    const [ cookieAnimation, setCookieAnimation] = useState(false);
+    // const [ closePhrase, setClosePhrase ] = useState(false);
+    
 
     
     const openCookie = () => {
         setMessage(data[Math.floor(Math.random() * data.length)]);
        
        
-        setIsAnimating(true);
+        setCookieAnimation(true);
 
         setTimeout(() => {
-            setIsAnimating(false);
+            setCookieAnimation(false);
           }, 1000);
+
+        // setClosePhrase(true);  
         };
+
+
     
 
 
@@ -27,13 +33,14 @@ const Cookie = ({data}) => {
         <div className="container"> 
             <h1 className="title">FORTUNE COOKIES</h1>
             <div className="img-container">
-                <img className={`cookie-cool-one ${isAnimating ? "animate" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
-                <button button className="button"  onClick={openCookie}>press to know your fortune
+                <img className={`cookie-cool-one ${cookieAnimation ? "shake" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
+                <button button className="button"  onClick={openCookie}>
+                    <span className="button-text">Press to know your fortune</span>
                 </button>
-                <img className={`cookie-cool-one ${isAnimating ? "animate" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
+                <img className={`cookie-cool-one ${cookieAnimation ? "shake" : ""}`} src="/cookie-cool.png" alt="cookiecool" />
             </div>
             <div className="phrase-container">
-                <p className="phrase">{message.phrase}</p>
+                <p className={`phrase  ${cookieAnimation ? "close-open" : ""}`}>{message.phrase}</p>
             </div> 
             <p className="source">{message.author}</p>
             <img className="bottom-cookie" src="cookie-bottom.png" alt="cookiecool" />
