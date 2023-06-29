@@ -93,7 +93,10 @@ body {
 }
 
 
+
+
 .container {
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url(./assets/fortuna-2/fondo4.jpg); */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -101,6 +104,36 @@ body {
   justify-content: center;
   color: var(--color-main);
 }
+
+.container-donot { 
+  position: fixed;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+
+.button-donot {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--color-bg);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  padding: auto;
+  cursor: pointer;
+  margin-bottom: 5px;
+  background-color: var(--color-bg);
+  opacity: 0.1;
+}
+
+.span-donot {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: auto;
+}
+
 
 .title {
   position: absolute; 
@@ -197,6 +230,7 @@ body {
   /* margin: 0 1rem; */
   animation: BottomCookie 3s infinite ease-in-out;
 }
+
 
 
 
